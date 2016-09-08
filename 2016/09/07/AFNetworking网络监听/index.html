@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="利用AFNetworking实现多张图片上传，比如要上传的参数是其他参数加一个图片数组如下：">
+<meta name="description" content="在我们的项目中很多时候会对网络进行监听，以便在网络状态改变的时候app可以做出一些事件，这篇文章主要是介绍AFNetworking中的AFNetworkReachabilityManager这个类的属性和方法，以及怎么去使用这个类.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AFNetworking实现多张图片上传">
-<meta property="og:url" content="http://LuckyLiang.github.io/2016/09/07/manayPic/index.html">
+<meta property="og:title" content="AFNetworking(一) - 网络监听">
+<meta property="og:url" content="http://LuckyLiang.github.io/2016/09/07/AFNetworking网络监听/index.html">
 <meta property="og:site_name" content="Mr.Liang">
-<meta property="og:description" content="利用AFNetworking实现多张图片上传，比如要上传的参数是其他参数加一个图片数组如下：">
-<meta property="og:updated_time" content="2016-09-07T15:12:00.000Z">
+<meta property="og:description" content="在我们的项目中很多时候会对网络进行监听，以便在网络状态改变的时候app可以做出一些事件，这篇文章主要是介绍AFNetworking中的AFNetworkReachabilityManager这个类的属性和方法，以及怎么去使用这个类.">
+<meta property="og:updated_time" content="2016-09-08T12:04:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AFNetworking实现多张图片上传">
-<meta name="twitter:description" content="利用AFNetworking实现多张图片上传，比如要上传的参数是其他参数加一个图片数组如下：">
+<meta name="twitter:title" content="AFNetworking(一) - 网络监听">
+<meta name="twitter:description" content="在我们的项目中很多时候会对网络进行监听，以便在网络状态改变的时候app可以做出一些事件，这篇文章主要是介绍AFNetworking中的AFNetworkReachabilityManager这个类的属性和方法，以及怎么去使用这个类.">
 
 
 
@@ -114,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://LuckyLiang.github.io/2016/09/07/manayPic/"/>
+  <link rel="canonical" href="http://LuckyLiang.github.io/2016/09/07/AFNetworking网络监听/"/>
 
-  <title> AFNetworking实现多张图片上传 | Mr.Liang </title>
+  <title> AFNetworking(一) - 网络监听 | Mr.Liang </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -256,7 +256,7 @@
             
             
               
-                AFNetworking实现多张图片上传
+                AFNetworking(一) - 网络监听
               
             
           </h1>
@@ -268,7 +268,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-07T01:40:06+08:00" content="2016-09-07">
+            <time itemprop="dateCreated" datetime="2016-09-07T23:58:48+08:00" content="2016-09-07">
               2016-09-07
             </time>
           </span>
@@ -279,8 +279,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/07/manayPic/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/07/manayPic/" itemprop="commentsCount"></span>
+                <a href="/2016/09/07/AFNetworking网络监听/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/07/AFNetworking网络监听/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -290,7 +290,7 @@
 
           
           
-             <span id="/2016/09/07/manayPic/" class="leancloud_visitors" data-flag-title="AFNetworking实现多张图片上传">
+             <span id="/2016/09/07/AFNetworking网络监听/" class="leancloud_visitors" data-flag-title="AFNetworking(一) - 网络监听">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -312,9 +312,12 @@
       
 
       
-        <p>利用AFNetworking实现多张图片上传，比如要上传的参数是其他参数加一个图片数组如下：</p>
+        <p>在我们的项目中很多时候会对网络进行监听，以便在网络状态改变的时候app可以做出一些事件，这篇文章主要是介绍AFNetworking中的AFNetworkReachabilityManager这个类的属性和方法，以及怎么去使用这个类.</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div></pre></td><td class="code"><pre><div class="line">- (void)sendComments &#123;</div><div class="line"> //上传的参数如下：</div><div class="line"> NSDictionary *dic = @&#123;@&quot;eva.eva_goods_id&quot;:@(goodsId),</div><div class="line">                          @&quot;eva.eva_user_id&quot;:userId,</div><div class="line">                          @&quot;eva.eva_grade&quot;:@(_grade),</div><div class="line">                          @&quot;eva.eva_detail&quot;:commentText</div><div class="line">                          @&quot;photos&quot;:@[1.png,2.png]&#125;;</div><div class="line">                          </div><div class="line"> //这里我们需要将photos参数分离出来具体代码如下：</div><div class="line"> NSDictionary *paramsDict = @&#123;@&quot;eva.eva_goods_id&quot;:@(goodsId),</div><div class="line">                              @&quot;eva.eva_user_id&quot;:userId,</div><div class="line">                          	   @&quot;eva.eva_grade&quot;:@(_grade),</div><div class="line">                         	   @&quot;eva.eva_detail&quot;:commentText&#125;;</div><div class="line">                         	   </div><div class="line"> NSMutableArray *imageArray = [NSMutableArray array];</div><div class="line">//这里假设_selectedPhotos是从本地相册选取的图片，具体实现这里将不作说明了</div><div class="line">if (_selectedPhotos.count &gt; 0 ) &#123;</div><div class="line">        </div><div class="line">        for (UIImage *image in _selectedPhotos) &#123;</div><div class="line">      </div><div class="line">            NSData *imagedata = [self imageDataWithImage:image];</div><div class="line">            [imageArray addObject:imagedata];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];</div><div class="line">    [manager POST:url parameters:paramsDict constructingBodyWithBlock:^(id&lt;AFMultipartFormData&gt;  _Nonnull formData) &#123;</div><div class="line">        </div><div class="line">        for (NSInteger i = 0; i &lt; imageArray.count; i++) &#123;</div><div class="line">            </div><div class="line">            NSData *picData = uploadParamArray[i];</div><div class="line">            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];</div><div class="line">            formatter.dateFormat = @&quot;yyyyMMddHHmmss&quot;;</div><div class="line">            </div><div class="line">            //文件名</div><div class="line">            NSString *fileNmae = [NSString stringWithFormat:@&quot;%@%ld.png&quot;,[formatter stringFromDate:[NSDate date]],(long)i];</div><div class="line">            </div><div class="line">            //其中name需要设置为图片上传的参数名pothos， mimeType是文件的类型</div><div class="line">            [formData appendPartWithFileData:picData name:@&quot;photo&quot; fileName:fileNmae mimeType:@&quot;image/png&quot;];</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        </div><div class="line">    &#125; progress:^(NSProgress * _Nonnull uploadProgress) &#123;</div><div class="line">        </div><div class="line">        </div><div class="line">    &#125; success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) &#123;</div><div class="line">        </div><div class="line">        //上传成功后的回调</div><div class="line">        </div><div class="line">        </div><div class="line">    &#125; failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) &#123;</div><div class="line">        </div><div class="line">        //上传失败        </div><div class="line">    &#125;];</div><div class="line">&#125;</div><div class="line">   </div><div class="line"> - (NSData *)imageDataWithImage:(UIImage *)image &#123;</div><div class="line">    </div><div class="line">    NSData *data;</div><div class="line">    </div><div class="line">    if (UIImagePNGRepresentation(image) == nil) &#123;</div><div class="line">        </div><div class="line">        data = UIImageJPEGRepresentation(image, 1);</div><div class="line">        </div><div class="line">    &#125;else &#123;</div><div class="line">        </div><div class="line">        data = UIImageJPEGRepresentation(image, 0.01);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    return data;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//通过导入了这个头文件，我们得知：网络监控的实现是依赖SystemConfiguration这个api的</div><div class="line">#import &lt;SystemConfiguration/SystemConfiguration.h&gt;</div><div class="line"></div><div class="line"></div><div class="line">typedef NS_ENUM(NSInteger, AFNetworkReachabilityStatus) &#123;</div><div class="line">    </div><div class="line">    /**</div><div class="line">     *  未知网络</div><div class="line">     */</div><div class="line">    AFNetworkReachabilityStatusUnknown          = -1,</div><div class="line">    /**</div><div class="line">     *  无网络</div><div class="line">     */</div><div class="line">    AFNetworkReachabilityStatusNotReachable     = 0,</div><div class="line">    /**</div><div class="line">     *  wwan手机自带网络</div><div class="line">     */</div><div class="line">    AFNetworkReachabilityStatusReachableViaWWAN = 1,</div><div class="line">    /**</div><div class="line">     *  wifi</div><div class="line">     */</div><div class="line">    AFNetworkReachabilityStatusReachableViaWiFi = 2,</div><div class="line">&#125;;</div><div class="line"></div><div class="line"> //当前网络的连接状态</div><div class="line">@property (readonly, nonatomic, assign) AFNetworkReachabilityStatus networkReachabilityStatus;</div><div class="line"></div><div class="line">// 当前网络是否可达</div><div class="line">@property (readonly, nonatomic, assign, getter = isReachable) BOOL reachable;</div><div class="line"></div><div class="line"> //当前网络是否连接wwan</div><div class="line">@property (readonly, nonatomic, assign, getter = isReachableViaWWAN) BOOL reachableViaWWAN;</div><div class="line"></div><div class="line"> //当前网络是否连接Wifi</div><div class="line">@property (readonly, nonatomic, assign, getter = isReachableViaWiFi) BOOL reachableViaWiFi;</div><div class="line"></div><div class="line"> //以下提供了5种初始化方法，能够满足大部分的需求。</div><div class="line">+ (instancetype)sharedManager;</div><div class="line"></div><div class="line">+ (instancetype)manager;</div><div class="line"></div><div class="line"> //监听制定domain的网络状态。</div><div class="line">+ (instancetype)managerForDomain:(NSString *)domain;</div><div class="line">+ </div><div class="line">// 监听某个socket地址的网络状态，</div><div class="line">+ (instancetype)managerForAddress:(const void *)address;</div><div class="line"></div><div class="line">- (instancetype)initWithReachability:(SCNetworkReachabilityRef)reachability NS_DESIGNATED_INITIALIZER;</div><div class="line"></div><div class="line"> //开始监听网络的状态</div><div class="line">- (void)startMonitoring;</div><div class="line"></div><div class="line"> //停止监听网络状态</div><div class="line">- (void)stopMonitoring;</div><div class="line"></div><div class="line">// 返回一个网络状态的本地语言的字符串。往往我们可以根据这个字符串来告诉用户，当前网络发生了什么，当然，也可以根据状态自定义提示文字。。</div><div class="line">- (NSString *)localizedNetworkReachabilityStatusString;</div><div class="line"></div><div class="line"> //设置网络状态改变的回调，</div><div class="line">- (void)setReachabilityStatusChangeBlock:(nullable void (^)(AFNetworkReachabilityStatus status))block;</div><div class="line"></div><div class="line"></div><div class="line"> /*这个是与网络状态变化相关的通知。接受的通知中会有一个userinfo 是一个NSDictionary 其中key就是</div><div class="line"> </div><div class="line"> AFNetworkingReachabilityNotificationStatusItem</div><div class="line"> </div><div class="line"> *** 这简单的两行代码能够告诉我们的是，我们平时的开发中 但凡设计到发通知的功能，我们应该把通知的字符串封装到一个专有的文件中，同时在文件内部按不同模块进行区分，当然必要的注释也很有必要。</div><div class="line"> </div><div class="line"> ps： FOUNDATION_EXPORT 和#define 都能定义常量。FOUNDATION_EXPORT 能够使用==进行判断，效率略高。而且能够隐藏定义细节(就是实现部分不在.中)</div><div class="line"> */</div><div class="line"> </div><div class="line">FOUNDATION_EXPORT NSString * const AFNetworkingReachabilityDidChangeNotification;</div><div class="line">FOUNDATION_EXPORT NSString * const AFNetworkingReachabilityNotificationStatusItem;</div></pre></td></tr></table></figure>
+<p>下面看一下网络监听的具体应用，一般是在AppDelegate类中写如下方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//导入头文件</div><div class="line">#import &quot;AFNetworkReachabilityManager.h&quot;</div><div class="line"></div><div class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions &#123;</div><div class="line">	</div><div class="line">	//1.初始化</div><div class="line">    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];</div><div class="line">    //2.开始监听网络的状态</div><div class="line">    [manager startMonitoring];</div><div class="line">    </div><div class="line">    //3.设置网络状态改变的回调</div><div class="line">    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) &#123;</div><div class="line">        </div><div class="line">        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@&quot;提示&quot; message:@&quot;&quot; delegate:nil cancelButtonTitle:@&quot;OK&quot; otherButtonTitles:nil, nil];</div><div class="line">        </div><div class="line">        switch (status) &#123;</div><div class="line">            case AFNetworkReachabilityStatusUnknown:</div><div class="line">                alert.message = @&quot;当前是未知网络&quot;;</div><div class="line">                </div><div class="line">                break;</div><div class="line">            case AFNetworkReachabilityStatusNotReachable:</div><div class="line">                alert.message = @&quot;无网络连接&quot;;</div><div class="line">                break;</div><div class="line">            case AFNetworkReachabilityStatusReachableViaWWAN:</div><div class="line">                alert.message = @&quot;手机蜂窝网络&quot;;</div><div class="line">                break;</div><div class="line">            case AFNetworkReachabilityStatusReachableViaWiFi:</div><div class="line">                alert.message = @&quot;当前WiFi网络&quot;;</div><div class="line">                break;</div><div class="line">            default:</div><div class="line">                break;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        [alert show];</div><div class="line">    &#125;];</div><div class="line"></div><div class="line">    return YES;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>参考文章：<a href="AFNetworking 3.0 源码解读（一）之 AFNetworkReachabilityManager">AFNetworking 3.0 源码解读</a></p>
 
       
     </div>
@@ -340,12 +343,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/09/07/manayPic/" rel="next" title="AFNetworking实现多张图片上传">
+                <i class="fa fa-chevron-left"></i> AFNetworking实现多张图片上传
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/09/07/AFNetworking网络监听/" rel="prev" title="AFNetworking(一) - 网络监听">
-                AFNetworking(一) - 网络监听 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/09/07/AFSecurityPolicy/" rel="prev" title="AFNetwirking(二) - AFSecurityPolicy">
+                AFNetwirking(二) - AFSecurityPolicy <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -372,8 +379,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/07/manayPic/"
-           data-title="AFNetworking实现多张图片上传" data-url="http://LuckyLiang.github.io/2016/09/07/manayPic/">
+      <div class="ds-thread" data-thread-key="2016/09/07/AFNetworking网络监听/"
+           data-title="AFNetworking(一) - 网络监听" data-url="http://LuckyLiang.github.io/2016/09/07/AFNetworking网络监听/">
       </div>
     
   </div>
