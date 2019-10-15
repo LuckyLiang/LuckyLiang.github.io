@@ -6,19 +6,10 @@
     <description>Recent content on ChengCheng Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Wed, 09 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Apr 2018 09:32:00 +0000</lastBuildDate>
     
 	<atom:link href="https://luckyliang.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Clean White Theme for Hugo</title>
-      <link>https://luckyliang.github.io/post/readme/</link>
-      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://luckyliang.github.io/post/readme/</guid>
-      <description>Clean White Theme for Hugo CleanWhite is a clean, elegant, but fully functional blog theme for Hugo. Here is a live demo site using this theme. It is based on huxblog Jekyll Theme and Clean Blog Jekyll Theme. These two upstream projects have done awesome jobs to create a blog theme, what I&amp;rsquo;m doing here is porting it to Hugo, of which I like the simplicity and the much faster</description>
-    </item>
     
     <item>
       <title>IOS底层原理一  探寻OC对象本质</title>
