@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="ios底层原理-探寻OC对象本质" />
-    <meta property="og:title" content="ios底层原理-探寻OC对象本质" />
-    <meta property="twitter:title" content="ios底层原理-探寻OC对象本质" />
+    <meta name="title" content="IOS底层原理一  探寻OC对象本质" />
+    <meta property="og:title" content="IOS底层原理一  探寻OC对象本质" />
+    <meta property="twitter:title" content="IOS底层原理一  探寻OC对象本质" />
     
 
     
@@ -34,7 +34,7 @@
     <meta name="keyword"  content="cheng, ChengCheng, chengcheng , Cheng的网络日志, Cheng的博客, chengcheng Blog, 博客, 个人网站, 互联网, Web, 云原生, IOS, Go, Swift, Microservice">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>ios底层原理-探寻OC对象本质-Cheng Cheng 的博客 | Cheng Cheng Blog</title>
+    <title>IOS底层原理一  探寻OC对象本质-Cheng Cheng 的博客 | Cheng Cheng Blog</title>
 
     <link rel="canonical" href="/2018/04/11/iosunderlying_ocobjectessence/">
 
@@ -180,7 +180,7 @@
                         </a>
                         
                     </div>
-                    <h1>ios底层原理-探寻OC对象本质</h1>
+                    <h1>IOS底层原理一  探寻OC对象本质</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by 
@@ -692,7 +692,7 @@ meta-class对象和class对象的内存结构是一样的，但是用途不一�
 
 <p>当Student的instance对象要调用Person的对象方法时，会先通过isa找到Student的class，然后通过superclass找到Person的class，最后找到对象方法的实现进行调用，同样如果Person发现自己没有响应的对象方法，又会通过Person的superclass指针找到NSObject的class对象，去寻找响应的方法</p>
 
-<p><img src="./QQ20181129-163054.png" alt="QQ20181129-163054" /></p>
+<p><img src="img/ocObjectImg01/QQ20181129-163054.png" alt="QQ20181129-163054" /></p>
 
 <ol>
 <li><p>当类对象调用父类的类方法时，就需要先通过isa指针找到meta-class，然后通过superclass去寻找响应的方法</p>
